@@ -1,0 +1,404 @@
+/* All Ajeer styles are scoped under .new-azeer-page to avoid conflicts with the rest of the app. */
+
+.new-azeer-page {
+  background: #808080;
+  min-height: calc(100vh - 140px);
+  padding: 20px 0 90px;
+  direction: ltr;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+.new-azeer-page *,
+.new-azeer-page *::before,
+.new-azeer-page *::after {
+  box-sizing: border-box;
+}
+
+.new-azeer-page img:not(.azeer-qr-code) {
+  max-width: none;
+  height: auto;
+}
+
+/* ====== Page Layout ====== */
+/* PDF page: 595.28 x 841.89pt (A4) */
+.new-azeer-page .azeer-page-container {
+  width: 595.28pt;
+  height: 841.89pt;
+  min-height: 841.89pt;
+  max-height: 841.89pt;
+  overflow: hidden;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 33pt 47pt 25pt 47pt;
+  direction: rtl;
+  position: relative;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+  color: #000;
+  box-sizing: border-box;
+  text-align: initial;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ====== Header Section ====== */
+.new-azeer-page .azeer-header-box {
+  border: 1px solid #c5c8cc;
+  border-radius: 4px;
+  padding: 8pt 12pt;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: rtl;
+  margin-bottom: 15pt;
+  min-height: 75pt;
+  box-sizing: border-box;
+}
+
+.new-azeer-page .azeer-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.new-azeer-page .azeer-ministry-logo {
+  height: 38pt !important;
+  width: auto !important;
+  max-width: none !important;
+  display: block;
+}
+
+.new-azeer-page .azeer-header-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5pt;
+  align-self: center;
+}
+
+.new-azeer-page .azeer-header-title {
+  font-size: 12.975pt !important;
+  font-weight: 700 !important;
+  color: #000;
+  text-align: center;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  white-space: nowrap;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.new-azeer-page .azeer-header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.new-azeer-page .azeer-qr-code {
+  width: 63pt !important;
+  height: 63pt !important;
+  max-width: none !important;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #fff;
+}
+
+.new-azeer-page .azeer-qr-number {
+  font-size: 8.65pt;
+  color: #000;
+  margin-top: 1pt;
+  font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
+  direction: ltr;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.new-azeer-page .azeer-qr-label {
+  font-size: 6.728pt;
+  color: #000;
+  margin-top: 0;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  line-height: 1.2;
+}
+
+/* ====== Body Text ====== */
+.new-azeer-page .azeer-body-text {
+  font-size: 9pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: right;
+  margin-bottom: 10pt;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  font-weight: 400;
+}
+
+/* ====== Data Tables ====== */
+.new-azeer-page .azeer-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #c5c8cc;
+  border-right: 1px solid #c5c8cc;
+  margin-bottom: 0;
+  font-size: 9pt;
+  direction: rtl;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  table-layout: fixed;
+  box-sizing: border-box;
+}
+
+.new-azeer-page .azeer-data-table col.azeer-col-label { width: 20%; }
+.new-azeer-page .azeer-data-table col.azeer-col-value { width: 32%; }
+.new-azeer-page .azeer-data-table col.azeer-col-mid-label { width: 24%; }
+.new-azeer-page .azeer-data-table col.azeer-col-mid-value { width: 24%; }
+
+.new-azeer-page .azeer-data-table td {
+  border-bottom: 1px solid #c5c8cc;
+  border-left: 1px solid #c5c8cc;
+  border-top: none;
+  border-right: none;
+  padding: 3.5pt 6pt;
+  text-align: right;
+  vertical-align: middle;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.35;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.new-azeer-page .azeer-data-table td.azeer-section-header {
+  background-color: #ECF0F1;
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 9pt;
+  padding: 3.5pt 6pt !important;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+}
+
+.new-azeer-page .azeer-label-cell,
+.new-azeer-page .azeer-mid-label-cell {
+  background-color: #ECF0F1;
+  font-weight: 400;
+  font-size: 9pt;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+}
+
+.new-azeer-page .azeer-label-cell {
+  white-space: nowrap;
+}
+
+.new-azeer-page .azeer-value-cell,
+.new-azeer-page .azeer-value-cell-rtl,
+.new-azeer-page .azeer-mid-value-cell {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.new-azeer-page .azeer-data-table td.azeer-worker-name {
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.new-azeer-page .azeer-value-cell {
+  background-color: #ffffff;
+  direction: ltr;
+  text-align: left;
+  font-family: Arial, 'Almarai', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.new-azeer-page .azeer-value-cell-rtl {
+  background-color: #ffffff;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+}
+
+.new-azeer-page .azeer-mid-value-cell {
+  background-color: #ffffff;
+  direction: ltr;
+  text-align: left;
+  font-family: Arial, 'Almarai', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ====== Declarations Section ====== */
+.new-azeer-page .azeer-declarations-section {
+  margin-top: 8pt;
+}
+
+.new-azeer-page .azeer-declarations-title {
+  font-size: 9pt !important;
+  font-weight: 600 !important;
+  text-align: center;
+  margin-bottom: 8pt;
+  margin-top: 0;
+  color: #000;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+}
+
+.new-azeer-page .azeer-declarations-intro {
+  font-size: 9pt;
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 3pt;
+  margin-top: 0;
+  color: #000;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+}
+
+.new-azeer-page .azeer-declarations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.new-azeer-page .azeer-declarations-list li {
+  font-size: 9pt;
+  line-height: 2;
+  color: #000;
+  text-align: right;
+  margin-bottom: 1pt;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  font-weight: 400;
+}
+
+/* ====== Footer ====== */
+.new-azeer-page .azeer-footer-section {
+  position: absolute;
+  bottom: 20pt;
+  left: 47pt;
+  right: 47pt;
+  text-align: center;
+}
+
+.new-azeer-page .azeer-footer-text {
+  font-size: 9pt;
+  color: #2b2a2a;
+  line-height: 1.6;
+  font-family: 'Almarai', 'GE SS Two', 'Noto Sans Arabic', sans-serif;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* ====== Download Button ====== */
+.new-azeer-page .azeer-download-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1a3a5c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background 0.2s;
+  line-height: 1.2;
+}
+
+.new-azeer-page .azeer-download-btn:hover {
+  background: #0d2840;
+  border-color: transparent;
+}
+
+.new-azeer-page .azeer-download-btn:disabled {
+  background: #888;
+  cursor: wait;
+}
+
+.new-azeer-page.azeer-pdf-exporting .azeer-page-container {
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+.new-azeer-page.azeer-pdf-exporting .azeer-download-btn {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  .azeer-download-btn {
+    display: none !important;
+  }
+
+  .min-h-screen {
+    min-height: 0 !important;
+    background: #fff !important;
+  }
+
+  main,
+  .azeer-print-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .new-azeer-page {
+    background: #fff !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .new-azeer-page .azeer-page-container {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 595.28pt !important;
+    height: 841.89pt !important;
+    min-height: 841.89pt !important;
+    max-height: 841.89pt !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .new-azeer-page .azeer-data-table td {
+    background-color: inherit;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .new-azeer-page .azeer-data-table td.azeer-section-header,
+  .new-azeer-page .azeer-label-cell,
+  .new-azeer-page .azeer-mid-label-cell {
+    background-color: #ECF0F1 !important;
+  }
+
+  .new-azeer-page .azeer-value-cell,
+  .new-azeer-page .azeer-value-cell-rtl,
+  .new-azeer-page .azeer-mid-value-cell {
+    background-color: #ffffff !important;
+  }
+}

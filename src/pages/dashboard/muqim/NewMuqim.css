@@ -1,0 +1,180 @@
+@import '../../../font/muqim-fonts.css';
+
+/* Font files live in src/font. All other selectors stay scoped under .new-muqim-page. */
+
+.new-muqim-page,
+.new-muqim-page *,
+.new-muqim-page *::before,
+.new-muqim-page *::after {
+  box-sizing: border-box;
+}
+
+.new-muqim-page .nm-viewport {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px 16px 48px;
+  gap: 16px;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 126, 5, 0.08), transparent 45%),
+    linear-gradient(180deg, #f3f3f3 0%, #e8e8e8 100%);
+}
+
+.new-muqim-page .nm-download-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+.new-muqim-page .nm-download-btn {
+  appearance: none;
+  border: 1px solid #d96a00;
+  background: #ff7e05;
+  color: #fff;
+  font-family: 'DINNextLTArabic', Arial, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  line-height: 1.2;
+}
+
+.new-muqim-page .nm-download-btn:hover:not(:disabled) {
+  background: #e87200;
+  border-color: #d96a00;
+}
+
+.new-muqim-page .nm-download-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.new-muqim-page .nm-page {
+  position: relative;
+  flex-shrink: 0;
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  font-family: 'DINNextLTArabic', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transform-origin: top center;
+  text-align: initial;
+}
+
+/* Screen scale only — disabled while exporting PDF */
+@media (min-width: 700px) {
+  .new-muqim-page:not(.nm-pdf-exporting) .nm-page {
+    transform: scale(1.35);
+    margin-bottom: calc(842px * 0.35);
+  }
+}
+
+@media (min-width: 1000px) {
+  .new-muqim-page:not(.nm-pdf-exporting) .nm-page {
+    transform: scale(1.55);
+    margin-bottom: calc(842px * 0.55);
+  }
+}
+
+.new-muqim-page.nm-pdf-exporting .nm-page {
+  transform: none !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.new-muqim-page.nm-pdf-exporting .nm-download-bar {
+  display: none !important;
+}
+
+.new-muqim-page.nm-pdf-exporting .nm-viewport {
+  padding: 0 !important;
+  background: #fff !important;
+  min-height: auto !important;
+}
+
+.new-muqim-page .nm-logo {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.new-muqim-page .nm-logo img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+  object-fit: contain;
+}
+
+.new-muqim-page .nm-rule {
+  position: absolute;
+  height: 0;
+  border: none;
+  border-top: 1px solid #000000;
+  z-index: 1;
+}
+
+.new-muqim-page .nm-txt {
+  position: absolute;
+  white-space: nowrap;
+  line-height: 1;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  font-family: 'DINNextLTArabic', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  letter-spacing: 0;
+  unicode-bidi: isolate;
+  -webkit-font-smoothing: antialiased;
+}
+
+.new-muqim-page .nm-txt-label {
+  color: #ff7700;
+}
+
+.new-muqim-page .nm-txt-value {
+  color: #000000;
+}
+
+.new-muqim-page .nm-txt-title {
+  color: #000000;
+}
+
+.new-muqim-page .nm-txt-section {
+  color: #000000;
+}
+
+.new-muqim-page .nm-txt-semibold {
+  font-weight: 600;
+  font-synthesis: none;
+}
+
+@media print {
+  .new-muqim-page .nm-no-print,
+  .new-muqim-page .nm-download-bar {
+    display: none !important;
+  }
+
+  .new-muqim-page .nm-viewport {
+    padding: 0 !important;
+    background: #fff !important;
+    min-height: auto !important;
+    gap: 0 !important;
+  }
+
+  .new-muqim-page .nm-page {
+    box-shadow: none !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}

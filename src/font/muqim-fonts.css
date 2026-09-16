@@ -1,0 +1,51 @@
+/* DIN Next LT Arabic from src/font — shared by Muqim certificate and Muqeem forms. */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('./DINNEXTLTARABIC-REGULAR-4.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('./DINNEXTLTARABIC-MEDIUM-3.TTF') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('./DINNEXTLTARABIC-MEDIUM-3.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('./DINNEXTLTARABIC-HEAVY2-2.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('./DINNEXTLTARABIC-HEAVY2-2.TTF') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+
+.muqeem-form-page,
+.muqeem-form-page input,
+.muqeem-form-page textarea,
+.muqeem-form-page select,
+.muqeem-form-page button,
+.muqeem-form-page label,
+.muqeem-form-page h2,
+.muqeem-form-page p {
+  font-family: 'DINNextLTArabic', Arial, Tahoma, sans-serif;
+}

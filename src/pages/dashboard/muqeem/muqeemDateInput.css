@@ -1,0 +1,15 @@
+@import '../../../font/muqim-fonts.css';
+
+/* Date numerals: same DIN Next LT Arabic as the Muqim certificate */
+.muqeem-date-input {
+  font-family: 'DINNextLTArabic', Arial, Tahoma, sans-serif;
+}
+
+.muqeem-date-input::-webkit-datetime-edit,
+.muqeem-date-input::-webkit-datetime-edit-fields-wrapper,
+.muqeem-date-input::-webkit-datetime-edit-text,
+.muqeem-date-input::-webkit-datetime-edit-month-field,
+.muqeem-date-input::-webkit-datetime-edit-day-field,
+.muqeem-date-input::-webkit-datetime-edit-year-field {
+  font-family: 'DINNextLTArabic', Arial, Tahoma, sans-serif;
+}
