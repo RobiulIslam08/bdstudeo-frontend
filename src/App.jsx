@@ -65,6 +65,7 @@ export default function App() {
         <Route path="/dashboard/muqeem/MuqeemBusiness" element={<ProtectedRoute><MuqeemBusiness /></ProtectedRoute>} />
         <Route path="/dashboard/muqeem/MuqeemSearch" element={<ProtectedRoute><MuqeemSearch /></ProtectedRoute>} />
         <Route path="/dashboard/medical/MedicalReportCreate" element={<ProtectedRoute><MedicalReportCreate /></ProtectedRoute>} />
+        <Route path="/dashboard/medical/MedicalReportCreateLatest" element={<ProtectedRoute><MedicalReportCreate design="latest" /></ProtectedRoute>} />
         <Route path="/dashboard/medical/MedicalReportSearch" element={<ProtectedRoute><MedicalReportSearch /></ProtectedRoute>} />
         <Route path="/dashboard/document" element={<ProtectedRoute><Document /></ProtectedRoute>} />
         <Route path="/dashboard/visa" element={<ProtectedRoute><VisaForm /></ProtectedRoute>} />

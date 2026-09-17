@@ -41,6 +41,7 @@ export default function DashboardLayout({ children, title = "Dashboard" }) {
         icon: "fileText",
         children: [
           { label: "Create Report", href: "/dashboard/medical/MedicalReportCreate" },
+          { label: "Latest Create Report", href: "/dashboard/medical/MedicalReportCreateLatest" },
           { label: "Search Report", href: "/dashboard/medical/MedicalReportSearch" },
         ],
       },

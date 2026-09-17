@@ -21,7 +21,9 @@ const nextFileNo = (id) => {
   return String(FILE_NO_START);
 };
 
-export default function MedicalReportCreate() {
+export default function MedicalReportCreate({ design = "old" }) {
+  const isLatest = design === "latest";
+  const pageTitle = isLatest ? "Latest Create Medical Report" : "Create Medical Report";
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -63,9 +65,10 @@ useEffect(() => {
       if (res.data.status === "success") {
         setForm((prev) => ({
           ...prev,
-          report_date: formattedDate, // এখানে ফরম্যাট করা তারিখ সেট হবে
+          report_date: formattedDate,
           time: currentTime,
-          file_no: nextFileNo(res.data.next_id),
+          // latest design uses the server's nextFileNo directly; old design maps via nextFileNo()
+          file_no: isLatest ? res.data.next_id : nextFileNo(res.data.next_id),
         }));
       }
     } catch (err) {
@@ -99,11 +102,11 @@ const handleSubmit = async (e) => {
     return `${day}/${month}/${year}`;
   };
 
-  // ডাটাবেসে পাঠানোর জন্য নতুন পে-লোড
   const finalData = {
     ...form,
     report_date: convertDate(form.report_date),
     date_of_birth: convertDate(form.date_of_birth),
+    design: design, // pass design to backend
   };
 
   try {
@@ -127,7 +130,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <DashboardLayout title="Create Medical Report">
+    <DashboardLayout title={pageTitle}>
       <section className="w-full bg-slate-50 min-h-screen p-4 md:p-8">
         <div className="max-w-5xl mx-auto">
           
@@ -136,7 +139,7 @@ const handleSubmit = async (e) => {
 
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6">
             <div className="bg-[#0B4BFF] p-4 flex justify-between items-center text-white">
-              <h1 className="text-xl font-bold uppercase tracking-wider">Create Medical Report</h1>
+              <h1 className="text-xl font-bold uppercase tracking-wider">{pageTitle}</h1>
               <i className="fas fa-file-medical text-xl"></i>
             </div>
 
@@ -148,7 +151,7 @@ const handleSubmit = async (e) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Report Date</label>
-                    <input type="date" name="report_date" value={form.report_date} onChange={onChange} className="w-full h-11 px-4 rounded-xl border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500/20" />
+                    <input type="text" name="report_date" value={form.report_date} onChange={onChange} className="w-full h-11 px-4 rounded-xl border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500/20" placeholder="DD/MM/YYYY" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Time</label>
