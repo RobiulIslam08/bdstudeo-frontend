@@ -76,7 +76,7 @@ useEffect(() => {
         ...prev,
         report_date: formattedDate,
         time: currentTime,
-        file_no: "Error",
+        file_no: String(FILE_NO_START),
       }));
     }
   };
