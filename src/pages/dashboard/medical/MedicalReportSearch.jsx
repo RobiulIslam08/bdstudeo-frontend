@@ -144,7 +144,7 @@ export default function MedicalReportSearch() {
                 </a>
                 <button
                   
-                  onClick={() => window.open(`${window.siteURL}checkReport?id=${result.id}`, '_blank')}
+                  onClick={() => window.open(result.view_url || `${window.siteURL}checkReport?id=${result.id}`, '_blank')}
                   className="flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg"
                 >
                   <i className="fas fa-print"></i> View & Print
